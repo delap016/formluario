@@ -16,3 +16,24 @@ async function handleSubmit(event) {
     alert("Gracias por contactarme, te escribiré pronto");
   }
 }
+
+      let currentStep = 0;
+      const formSteps = document.querySelectorAll('.form-step');
+
+      // Mostrar el siguiente paso
+      function nextStep() {
+        if (currentStep < formSteps.length - 1) {
+          formSteps[currentStep].classList.remove('active');
+          currentStep++;
+          formSteps[currentStep].classList.add('active');
+        }
+      }
+
+      // Mostrar el paso anterior
+      function prevStep() {
+        if (currentStep > 0) {
+          formSteps[currentStep].classList.remove('active');
+          currentStep--;
+          formSteps[currentStep].classList.add('active');
+        }
+      }
